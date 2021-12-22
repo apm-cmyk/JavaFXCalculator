@@ -1,16 +1,19 @@
 package gui;
 
+import java.net.URL;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
+import gui.util.Constraints;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
 
-public class ViewController {
-	
+public class ViewController implements Initializable{
 	
 	
 	@FXML
@@ -87,6 +90,17 @@ public class ViewController {
 			catch (NumberFormatException e){
 		
 			}
+		
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		/*Constraints são as limitações dos botoes caixas de texto e etc*/
+		Constraints.setTextFieldDouble(txtNumber1);
+		Constraints.setTextFieldDouble(txtNumber2);
+		Constraints.setTextFieldMaxLength(txtNumber1, 12);
+		Constraints.setTextFieldMaxLength(txtNumber2, 12);
 		
 	}
 	
